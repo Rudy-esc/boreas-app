@@ -82,10 +82,10 @@ document.addEventListener('DOMContentLoaded', function() {
               dia = (info.event.start.getDate());
               anio = (info.event.start.getFullYear());
 
-              hora = (info.event.start.getHours()+":"+info.event.getMinutes());
+              hora = (info.event.start.getHours()+":"+info.event.start.getMinutes());
 
-              $('#txtFechaStart').val(info.event.start);
-              $('#txtHoraStart').val(info.event.start);
+              $('#txtFechaStart').val(anio+"-"+mes+"-"+dia);
+              $('#txtHoraStart').val(hora);
               $('#textFechaEnd').val(info.event.end);
               $('#txtHoraEnd').val(info.event.end);
               $('#DescripcionSolicitud').val(info.event.txtDescripcion);
@@ -93,19 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             $('#exampleModal').modal('show');
            
-  },
-  eventResize: function(info) {
-
-              $('#txtID').val(info.event.id);
-              $('#txtTitulo').val(info.event.title);
-              $('#txtSitio').val(info.event.SitiosId);
-              $('#txtFechaStart').val(info.event.start);
-              $('#txtFechaStart').val(info.event.start);
-              $('#textFechaEnd').val(info.event.end);
-              $('#DescripcionSolicitud').val(info.event.txtDescripcion);
-              $('#txtObjeto').val(info.event.ObjetosId);
-              ObjSolicitud=recolectarDatosGUI();
-              recolectarDatosGUI(objSolicitud);
+  
   },
   
   events:"{{url ('solicitud/show')}}"
